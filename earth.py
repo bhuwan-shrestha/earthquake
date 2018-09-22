@@ -8,6 +8,7 @@ from time import time
 from random import randint
 from IPython.core.display import clear_output
 
+import os
 
 #### Getting years form 2010 to 2018
 years_url = [str(i) for i in range(2010,2018)]
@@ -70,9 +71,8 @@ data = pd.DataFrame({
     'Epicenter': epicenter
 })
 
-print(data.info())
-
-path = 'C:\\Users\\Dell\\Documents\\Python-class\\project\\CSV\\'
+### determing the path to save csv file
+path = os.path.dirname(__file__)
 
 ### saving in csv format
 data.to_csv(path+'EarthQuake.csv', index=False)
